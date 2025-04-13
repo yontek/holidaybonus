@@ -1,4 +1,5 @@
 
+
 // Countdown timer
 function updateCountdown() {
     let minutes = 15;
@@ -29,7 +30,9 @@ function updateCountdown() {
 function createCoins() {
     const animationContainer = document.getElementById('crashAnimation');
     const colors = ['#FFD700', '#FFA500', '#FF8C00'];
-    
+    const maxCoins = window.innerWidth < 600 ? 30 : 100; // Fewer coins on mobile
+const coinInterval = window.innerWidth < 600 ? 500 : 300; // Slower spawn
+
     setInterval(() => {
         const coin = document.createElement('div');
         coin.className = 'coin';
